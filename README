@@ -1,0 +1,23 @@
+Reduction for aMouseDragStart error
+-----------------------------------
+
+To reproduce error:
+  git clone git://github.com/gorenje/amousedragstart.git
+  cd amousedragstart
+  git submodule update --init
+  cd Libraries/Cappuccino
+  jake release && jake debug
+  cd ../../
+  open index-debug.html
+
+Moving the mouse causes the following errors
+
+in Safari:
+
+  TypeError: Result of expression 'aMouseDragStart' [null] is not an object.
+
+in Firefox:
+
+  aMouseDragStart is null
+  [Break On This Error] (4739 out of range 4637)
+
